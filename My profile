@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Konstantinos Falieros | Commercial Analytics & Product Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Commercial Analytics & Product Marketing in Pharma (IVF & IBD) – Business Insights, IQVIA, MBR/IBP, and fertility-focused analytics." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #141a2b;
+      --accent: #4fd1c5;
+      --accent-soft: rgba(79, 209, 197, 0.12);
+      --text-main: #f7fafc;
+      --text-muted: #a0aec0;
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #18213b 0, #050814 55%, #020309 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 32px 16px 56px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--accent);
+      background: radial-gradient(circle at top left, rgba(79, 209, 197, 0.18), rgba(10, 13, 30, 0.9));
+      box-shadow: 0 0 25px rgba(79, 209, 197, 0.35);
+    }
+
+    .tag-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-main {
+      background: linear-gradient(145deg, rgba(20, 26, 43, 0.9), rgba(10, 15, 30, 0.98));
+      border-radius: var(--radius-xl);
+      padding: 22px 22px 20px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.65);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(79, 209, 197, 0.18), transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      max-width: 90%;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(79, 209, 197, 0.25);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #7de5da);
+      color: #051014;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(79, 209, 197, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 36px rgba(79, 209, 197, 0.65);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--border-soft);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--text-muted);
+      opacity: 0.8;
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card {
+      background: rgba(9, 13, 26, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 14px 14px 13px;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .metric-label {
+      opacity: 0.8;
+    }
+
+    .metric-value {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 26px;
+    }
+
+    section h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 820px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .text-muted {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    ul {
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    ul li + li {
+      margin-top: 4px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+    }
+
+    .quote {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    .quote-author {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .exp-item + .exp-item {
+      margin-top: 12px;
+    }
+
+    .exp-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .exp-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-soft);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="logo-mark">KF</div>
+        <div>
+          <div style="font-size:15px;font-weight:600;">Konstantinos Falieros</div>
+          <div style="font-size:12px;color:#a0aec0;">Commercial Analytics & Product Marketing · IVF & IBD</div>
+        </div>
+      </div>
+      <span class="tag-pill">Thessaloniki · Greece</span>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-main">
+        <div class="hero-eyebrow">Fertility, analytics & strategy</div>
+        <h1 class="hero-title">Turning complex RM/IBD data into clear brand decisions.</h1>
+        <p class="hero-subtitle">
+          Pharma commercial professional at the intersection of <strong>Product Marketing</strong>,
+          <strong>Business Intelligence</strong> and <strong>Field Execution</strong> across Greece & South-East Europe.
+        </p>
+
+        <div class="hero-badges">
+          <span class="hero-badge">MBR / IBP (SEE)</span>
+          <span class="hero-badge">IQVIA remediation</span>
+          <span class="hero-badge">Power BI reporting</span>
+          <span class="hero-badge">IVF & IBD portfolio</span>
+        </div>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/konstantinos-falieros" target="_blank" rel="noreferrer">
+            View my LinkedIn profile
+          </a>
+          <!-- Replace # with your CV link if you upload it somewhere -->
+          <a class="btn btn-ghost" href="#" target="_blank" rel="noreferrer">
+            Download CV (PDF)
+          </a>
+        </div>
+
+        <div class="hero-footnote">
+          ACE Champion · Top Performer · MSc Business Analytics · BSc Molecular Biology (in progress)
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="card">
+          <h3>Snapshot</h3>
+          <div class="metric-row">
+            <span class="metric-label">Region focus</span>
+            <span class="metric-value">Greece & SEE</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Therapy areas</span>
+            <span class="metric-value">IVF, IBD</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Experience</span>
+            <span class="metric-value">20+ years in pharma</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Strengths</span>
+            <span class="metric-value">Analytics, strategy, execution</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Key tools</h3>
+          <div class="pill-row">
+            <span class="pill">Power BI</span>
+            <span class="pill">IQVIA</span>
+            <span class="pill">Excel</span>
+            <span class="pill">R (analytics)</span>
+            <span class="pill">Forecasting</span>
+            <span class="pill">MBR / IBP</span>
+            <span class="pill">KPI design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT & EDUCATION -->
+    <section class="two-col">
+      <div>
+        <h2>About</h2>
+        <p class="text-muted">
+          I work where **Product Marketing**, **Business Intelligence** and **field reality** meet. In recent years I’ve acted as a
+          Commercial Analytics & Product Marketing lead for my region, helping teams move from “data” to clear decisions for IVF & IBD brands.
+        </p>
+        <br />
+        <p class="text-muted">
+          I drive MBR / IBP routines, clean and validate IQVIA data, and design Power BI views that senior leaders actually use. I’m comfortable
+          switching between strategic discussions (sizing, forecasts, scenarios) and very practical questions: “Which centres, which segments,
+          which levers next quarter?”
+        </p>
+        <br />
+        <p class="text-muted">
+          Academically, I combine **Marketing**, **Business Analytics** and **Molecular Biology & Genetics**, which helps me bridge commercial,
+          financial and scientific perspectives – especially in fertility.
+        </p>
+      </div>
+      <div>
+        <h2>Education</h2>
+        <ul>
+          <li><strong>MSc, Business Analytics & Decision Making</strong> – University of York (2023–2025)</li>
+          <li><strong>BSc (Hons), Molecular Biology & Genetics</strong> – University of Essex (in progress)</li>
+          <li><strong>BA, Marketing</strong> – University of Sheffield (2000–2003)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KEY WORK -->
+    <section>
+      <h2>Selected work & projects</h2>
+      <div class="two-col">
+        <div>
+          <div class="exp-item">
+            <div class="exp-title">Commercial Analytics & Product Marketing – Greece & SEE</div>
+            <div class="exp-meta">Reproductive Medicine & IBD | 2023–present</div>
+            <ul>
+              <li>Lead MBR / IBP performance packs for Greece & South-East Europe with standardised KPIs and trend views.</li>
+              <li>Clean, validate and interpret IQVIA data across multiple countries; resolve inconsistencies and create a “single source of truth”.</li>
+              <li>Support forecasting, targeting and SFE with clear demand signals and territory-level optimisation.</li>
+              <li>Bridge commercial, medical, access and finance to align on shared numbers and priorities.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-title">Brand & market projects (IVF & IBD)</div>
+            <div class="exp-meta">Rekovelle, Picoprep, mesalazine</div>
+            <ul>
+              <li>Localized **Rekovelle Calculator** and educational materials, supporting dosing confidence and adoption in IVF centres.</li>
+              <li>Led **Picoprep** re-launch / repositioning in Northern Greece, and contributed to SEE expansion analysis (sizing, pricing, reimbursement, private centres).</li>
+              <li>Contributed to **mesalazine dosing** analysis across CEE, mapping patterns and adherence signals for medical education and positioning.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="exp-item">
+            <div class="exp-title">Population decline in the Balkans</div>
+            <div class="exp-meta">MSc dissertation · 2000–2024 data</div>
+            <ul>
+              <li>Analysed demographic change in 13 Balkan & CEE countries using World Bank, Eurostat and Fertility Europe Atlas data.</li>
+              <li>Showed how low fertility, migration and ageing interact – and where IVF/ART can (and cannot) change the curve.</li>
+              <li>Linked demographic trends with policy, economics and fertility care access – connecting my analytics work with daily RM practice.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section>
+      <h2>What leaders say</h2>
+      <div class="two-col">
+        <div class="card">
+          <p class="quote">
+            “I had the pleasure of working with Konstantinos during my time as General Manager for the Balkans and Greece, where he successfully
+            managed projects across multiple countries and collaborated with diverse international teams. He has a natural ability to bring
+            people together, working smoothly across cultures and functions while keeping projects focused and moving forward.”
+          </p>
+          <div class="quote-author">Simona Mâțu – Senior Finance & Service Delivery Leader</div>
+        </div>
+        <div class="card">
+          <p class="quote">
+            “I’d like to recognize Konstantinos for his excellent work in delivering high-quality market and commercial analysis across Greece
+            and the wider SEE region. His consistent support in MBR preparation and reliable market share insights significantly strengthen our
+            strategic discussions and decision-making.”
+          </p>
+          <div class="quote-author">Jovan Krstić – Country Representative & Finance Director SEE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+      <h2>Contact</h2>
+      <p class="text-muted">
+        The best way to reach me is via <a href="https://www.linkedin.com/in/konstantinos-falieros" target="_blank" rel="noreferrer">LinkedIn</a>.
+        You can also email me at: <strong>[your.email@here.com]</strong>
+      </p>
+    </section>
+
+    <div class="footer">
+      <span>© <span id="year"></span> Konstantinos Falieros</span>
+      <span>Built as a personal portfolio – views are my own.</span>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
